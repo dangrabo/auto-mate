@@ -1,0 +1,37 @@
+[project]
+name = "automate"
+version = "0.1.0"
+description = "Turns GitHub issues labelled for automation into pull requests, using Claude Code."
+readme = "README.md"
+authors = [
+    { name = "dangrabo", email = "193651636+dangrabo@users.noreply.github.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+automate = "automate.cli:main"
+
+[build-system]
+requires = ["uv_build>=0.12.7,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "ruff>=0.9",
+]
+
+[tool.ruff]
+# Keep the src layout discoverable and match a common line length.
+src = ["src", "tests"]
+line-length = 100
+
+[tool.ruff.lint]
+# A small, sensible starter rule set:
+#   E/W = pycodestyle, F = pyflakes, I = isort (import sorting),
+#   UP  = pyupgrade (modern syntax), B = flake8-bugbear (likely bugs).
+select = ["E", "W", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

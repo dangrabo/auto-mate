@@ -1,0 +1,21 @@
+# auto-mate — never commit these
+
+# Secrets
+.env
+
+# Local database
+automate.db
+automate.db-journal
+automate.db-wal
+automate.db-shm
+
+# Per-repo clones and per-job worktrees
+workspaces/
+
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
